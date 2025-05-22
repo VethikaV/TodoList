@@ -1,60 +1,174 @@
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    --background: #000430;
-    --secondaryBackground: #171c48;
-    --text:#fff;
-    --purple:#828dff;
-    --teal: #24feee;
+:root {
+  --background: #000000;
+  --secondaryBackground: #1a1a1a;
+  --text: #ffffff;
+  --purple: #a66cff;
+  --teal: #00ffe0;
 }
-body{
-    background-color: var(--background);
-    color: var(--text);
+
+body.light {
+  --background: #ffffff;
+  --secondaryBackground: #f9f9f9;
+  --text: #000000;
+  --purple: #7c3aed;
+  --teal: #06b6d4;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin:  120px auto 0 auto;
-    max-width: 500px;
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.4s, color 0.4s;
 }
-.stats-container{
-    padding:30px;
-    border-radius:20px;
-    border:2px solid var(--purple);
-    display:flex; 
-    gap: 20px;
-    justify-content: space-between;
-    width: 100%;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 120px auto 0 auto;
+  max-width: 500px;
 }
-.details{
-    width: 100%;
+
+.stats-container {
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid var(--purple);
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  background-color: var(--secondaryBackground);
+  transition: background-color 0.4s;
 }
-#progressBar{
-    width: 100%;
-    height: 10px;
-    background-color: var(--secondaryBackground);
-    border-radius: 5px;
-    margin-top: 20px;
+
+.details {
+  flex: 1;
 }
-#progress{
-    width: 50%;
-    height: 10px;
-    background-color: var(--teal);
+
+#progressBar {
+  width: 100%;
+  height: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  margin-top: 20px;
 }
-#numbers{
-    width: 100px;
-    height: 100px;
-    background-color: var(--purple);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 30px;
-    font-weight: bold;
+
+#progress {
+  width: 0%;
+  height: 10px;
+  background: linear-gradient(90deg, var(--teal), var(--purple));
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#numbers {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(145deg, var(--purple), var(--teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  box-shadow: 0 0 8px var(--teal);
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+form {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  background: var(--secondaryBackground);
+  border: 1px solid var(--purple);
+  border-radius: 10px;
+  outline: none;
+  color: var(--text);
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button#newTask {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--teal));
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button#newTask:hover {
+  transform: scale(1.1);
+}
+
+.task-list {
+  list-style: none;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondaryBackground);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--purple);
+  transition: background-color 0.3s ease;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task.completed p {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.icons img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--teal);
+  transform: scale(1.2);
+  cursor: pointer;
 }

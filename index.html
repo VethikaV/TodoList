@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoApp</title>
-    <link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TodoApp</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
+  <div class="container">
     <div class="stats-container">
-        <div class="details">
-            <h1>Todo App</h1>
-            <p> Keep it up!</p>
-            <div id="progressBar">
-                <div id="progress"></div>
-            </div>
+      <div class="details">
+        <h1>Todo App</h1>
+        <p>Keep it up!</p>
+        <div id="progressBar">
+          <div id="progress"></div>
         </div>
-        <div class="stats-numbers">
-            <p id="numbers">2 / 3</p>
-        </div>
+      </div>
+      <div class="stats-numbers">
+        <p id="numbers">0 / 0</p>
+      </div>
+      <button id="themeToggle">🌙</button>
     </div>
-    <form action="">
-        <input type="text" placeholder="Write your task">
-        <button type="submit">+</button>
+
+    <form>
+      <input type="text" id="taskInput" placeholder="Write your task" />
+      <button id="newTask" type="submit">+</button>
     </form>
-    <!--for task list-->
-    <ul class="task-list">
-        
-    </ul>
-    </div>
-    <script src="./app.js"></script>
-    
+
+    <ul id="task-list" class="task-list"></ul>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
