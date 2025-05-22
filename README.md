@@ -48,29 +48,6 @@ A sleek and responsive **Todo App** built using **HTML, CSS, and JavaScript**, f
 └── app.js             # Task logic, theme toggle, and progress logic
 ```
 
----
-
-### 📦 How to Use
-
-1. Clone the repo:
-
-   ```bash
-   git clone https://github.com/your-username/todo-app.git
-   ```
-
-2. Open `index.html` in your browser.
-
-3. Start adding your tasks!
-
----
-
-### ✨ Customization Tips
-
-* Modify colors in `:root` for custom themes
-* Extend task items to include deadlines or tags
-* Add localStorage support to persist tasks
-
----
 
 ### 📃 License
 
